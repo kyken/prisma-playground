@@ -1,0 +1,17 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://ewdashboarduser:ewdashboardpass@127.0.0.1:5433/ewdashboarddb"
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  json  Json?
+}
